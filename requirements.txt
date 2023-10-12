@@ -4,8 +4,8 @@ bs4
 pandas
 scikit-learn
 torch
-transformers
 json
 pickle
 numpy
 streamlit
+transformers[torch]
