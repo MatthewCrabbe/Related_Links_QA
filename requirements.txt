@@ -1,1 +1,11 @@
-flask==1.1.2
+textstat
+requests
+bs4
+pandas
+sklearn
+torch
+transformers
+json
+pickle
+numpy
+streamlit
