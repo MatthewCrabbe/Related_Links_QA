@@ -27,7 +27,6 @@ def related_links(url):
     import pandas as pd
     from sklearn.metrics.pairwise import cosine_similarity
     import torch
-    from transformers import BertModel, BertTokenizer
     import json
     import pickle
     import numpy as np
