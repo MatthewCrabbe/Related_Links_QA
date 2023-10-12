@@ -1,4 +1,5 @@
 import textstat
+from transformers import AutoModel, AutoTokenizer, AutoConfig
 
 def estimate_reading_time(text):
     num_words = len(text.split())
@@ -33,9 +34,14 @@ def related_links(url):
     
     save_directory = "/Users/david/Desktop/QA Media/Models"
 
-    # Load the model and tokenizer from the directory
-    model = BertModel.from_pretrained(save_directory)
-    tokenizer = BertTokenizer.from_pretrained(save_directory)
+    # Load the model configuration
+    config = AutoConfig.from_pretrained(save_directory)
+
+    # Load the tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(save_directory)
+
+    # Load the model
+    model = AutoModel.from_pretrained(save_directory, config=config)
     
     # Load the dictionary from a file
     with open('dict_file.json', 'r') as file:
