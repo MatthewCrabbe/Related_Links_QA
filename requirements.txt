@@ -2,7 +2,7 @@ textstat
 requests
 bs4
 pandas
-sklearn
+scikit-learn
 torch
 transformers
 json
