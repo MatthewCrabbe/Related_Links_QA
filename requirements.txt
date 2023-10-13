@@ -3,7 +3,6 @@ requests
 bs4
 pandas
 scikit-learn
-pickle
 numpy
 streamlit
 torch
