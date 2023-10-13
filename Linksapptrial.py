@@ -34,13 +34,13 @@ def related_links(url):
     #save_directory = "/Users/david/Desktop/QA Media/Models"
 
     # Load the model configuration
-    config = AutoConfig.from_pretrained('pytorch_model.bin')
+    config = AutoConfig.from_pretrained('config.json')
 
     # Load the tokenizer
-    tokenizer = AutoTokenizer.from_pretrained('pytorch_model.bin')
+    tokenizer = AutoTokenizer.from_pretrained('config.json')
 
     # Load the model
-    model = AutoModel.from_pretrained('pytorch_model.bin', config=config)
+    model = AutoModel.from_pretrained('config.json', config=config)
     
     # Load the dictionary from a file
     with open('dict_file.json', 'r') as file:
