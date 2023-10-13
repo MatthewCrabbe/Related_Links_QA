@@ -32,15 +32,16 @@ def related_links(url):
     import numpy as np
     
     #save_directory = "/Users/david/Desktop/QA Media/Models"
+    model_directory = './'
 
     # Load the model configuration
-    config = AutoConfig.from_pretrained('config.json')
+    config = AutoConfig.from_pretrained(model_directory)
 
     # Load the tokenizer
-    tokenizer = AutoTokenizer.from_pretrained('config.json')
+    tokenizer = AutoTokenizer.from_pretrained(model_directory)
 
     # Load the model
-    model = AutoModel.from_pretrained('config.json', config=config)
+    model = AutoModel.from_pretrained(model_directory, config=config)
     
     # Load the dictionary from a file
     with open('dict_file.json', 'r') as file:
