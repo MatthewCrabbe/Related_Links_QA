@@ -146,7 +146,9 @@ button_pressed = st.button("Submit")
 if button_pressed:
     time, links = related_links(input_url)
     # Display the result
-    st.write(f'The estimated reading time is {time} and the URL links are {links}')
+    st.write(f'The estimated reading time is {time} and the URL links are:')
+    for x in links:
+        st.write(x)
 else:
     st.write('Please enter a URL')
 
