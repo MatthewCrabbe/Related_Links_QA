@@ -3,9 +3,9 @@ requests
 bs4
 pandas
 scikit-learn
-torch
 json
 pickle
 numpy
 streamlit
+torch
 transformers[torch]
