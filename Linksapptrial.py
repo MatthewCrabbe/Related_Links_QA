@@ -31,16 +31,16 @@ def related_links(url):
     import pickle
     import numpy as np
     
-    save_directory = "/Users/david/Desktop/QA Media/Models"
+    #save_directory = "/Users/david/Desktop/QA Media/Models"
 
     # Load the model configuration
-    config = AutoConfig.from_pretrained(save_directory)
+    config = AutoConfig.from_pretrained('pytorch_model.bin')
 
     # Load the tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(save_directory)
+    tokenizer = AutoTokenizer.from_pretrained('pytorch_model.bin')
 
     # Load the model
-    model = AutoModel.from_pretrained(save_directory, config=config)
+    model = AutoModel.from_pretrained('pytorch_model.bin', config=config)
     
     # Load the dictionary from a file
     with open('dict_file.json', 'r') as file:
