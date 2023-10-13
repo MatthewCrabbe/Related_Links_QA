@@ -18,7 +18,7 @@ def estimate_reading_time(text):
         wpm = 150  # Fairly difficult, difficult, and very confusing text
 
     reading_time_min = num_words / wpm
-    return reading_time_min
+    return round(reading_time_min, 2)
 
 def related_links(url):
     #Import Modules
@@ -138,11 +138,15 @@ import streamlit as st
 # Title for the app
 st.title('Related Article Links App')
 
-# Take number input from the user
+# Take URL input from the user
 input_url = st.text_input('Enter article url:')
 
-# Calculate the square of the number
-time, links = related_links(input_url)
+button_pressed = st.button("Submit")
+
+if button_pressed:
+    time, links = related_links(input_url)
+else:
+    st.write('Please enter a URL')
 
 # Display the result
 st.write(f'The estimated reading time is {time} and the URL links are {links}')
