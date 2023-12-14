@@ -138,7 +138,9 @@ if button_pressed:
     # Display the result
     st.write(f'The estimated reading time is {time} minutes and the related titles are:')
     for x in links:
-        st.write(x)
+        parts = x.split("|")
+        result = parts[0].strip()
+        st.write(result)
 else:
     st.write('Please enter title and body')
 
