@@ -48,7 +48,7 @@ def related_links(title, article_text):
         articles = json.load(file)
         
     
-    if url not in list(articles.keys()):   
+    if title not in list(articles.keys()):   
         article_content = [x for x in articles.values()]
 
         # Function to get embeddings
