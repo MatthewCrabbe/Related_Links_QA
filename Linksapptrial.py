@@ -129,7 +129,7 @@ st.title('Related Article Links App')
 input_title = st.text_input('Enter article title:')
 
 #Take text input from the user
-input_article_content = st.text_input('Enter article body:')
+input_article_content = st.text_area('Enter article body:', height=300)
 
 button_pressed = st.button("Submit")
 
