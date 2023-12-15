@@ -86,7 +86,7 @@ def related_links(title, article_text):
 
         for i in top_15:
             top_10_titles.append([x for x in articles.keys()][i])
-            top_10_titles = [x for x in top_10_titles if x != title][:10]
+            top_10_titles = [x for x in top_10_titles if x != title][:5]
             
     else:
         article_content = [x for x in articles.values()]
@@ -112,7 +112,7 @@ def related_links(title, article_text):
 
         for i in top_15:
             top_10_titles.append([x for x in articles.keys()][i])
-            top_10_titles = [x for x in top_10_titles if x != title][:10]
+            top_10_titles = [x for x in top_10_titles if x != title][:5]
             
     reading_time = estimate_reading_time(article_text)
     
