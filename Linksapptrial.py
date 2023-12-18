@@ -92,5 +92,28 @@ def related_links(title, article_text):
     reading_time = estimate_reading_time(article_text)
 
     return reading_time, top_10_titles
+# Import Streamlit
+import streamlit as st
 
+# Title for the app
+st.title('Related Article Links App')
+
+# Take title input from the user
+input_title = st.text_input('Enter article title:')
+
+#Take text input from the user
+input_article_content = st.text_area('Enter article body:', height=300)
+
+button_pressed = st.button("Submit")
+
+if button_pressed:
+    time, links = related_links(input_title, str(input_article_content))
+    # Display the result
+    st.write(f'The estimated reading time is {time} minutes and the related titles are:')
+    for x in links:
+        parts = x.split("|")
+        result = parts[0].strip()
+        st.write(result)
+else:
+    st.write('Please enter title and body')
 
