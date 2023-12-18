@@ -1,6 +1,8 @@
 import textstat
 from transformers import AutoModel, AutoTokenizer, AutoConfig
 
+from transformers import AutoModel, AutoTokenizer, AutoConfig
+
 def related_links(title, article_text):
     # Import Modules (unchanged)
     import requests
