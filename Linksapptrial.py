@@ -3,6 +3,25 @@ from transformers import AutoModel, AutoTokenizer, AutoConfig
 
 from transformers import AutoModel, AutoTokenizer, AutoConfig
 
+def estimate_reading_time(text):
+    num_words = len(text.split())
+    flesch_score = textstat.flesch_reading_ease(text)
+
+    # Adjust words-per-minute rate based on Flesch score
+    if flesch_score >= 90.0:
+        wpm = 250  # Very easy text
+    elif flesch_score >= 80.0:
+        wpm = 220  # Easy text
+    elif flesch_score >= 70.0:
+        wpm = 200  # Fairly easy text
+    elif flesch_score >= 60.0:
+        wpm = 180  # Standard text
+    else:
+        wpm = 150  # Fairly difficult, difficult, and very confusing text
+
+    reading_time_min = num_words / wpm
+    return round(reading_time_min, 2)
+
 def related_links(title, article_text):
     # Import Modules (unchanged)
     import requests
