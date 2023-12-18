@@ -92,6 +92,7 @@ def related_links(title, article_text):
     reading_time = estimate_reading_time(article_text)
 
     return reading_time, top_10_titles
+    
 # Import Streamlit
 import streamlit as st
 
